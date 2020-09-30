@@ -1,0 +1,23 @@
+{
+  "name": "link-meta-preview",
+  "version": "0.1.0",
+  "description": "Link meta preview which returns basic preview info like title, description, images, videos based on metadata",
+  "main": "./index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": "https://github.com/firman1015/link-meta-preview.git",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "request": "^2.88.2"
+  },
+  "keywords": [
+    "link meta preview",
+    "link-meta-preview"
+  ],
+  "author": "Firmansyah Effendi",
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/firman1015/link-meta-preview/blob/master/LICENSE"
+  }
+}
