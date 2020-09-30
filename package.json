@@ -1,6 +1,6 @@
 {
-  "name": "@firman1015/link-meta-preview",
-  "version": "1.0.0",
+  "name": "@connectivepack/link-meta-preview",
+  "version": "1.0.1",
   "description": "Link meta preview which returns basic preview info like title, description, images, videos based on metadata",
   "main": "./index.js",
   "scripts": {

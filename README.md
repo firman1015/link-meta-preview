@@ -1,17 +1,17 @@
-# link-meta-preview
+# @connectivepack/link-meta-preview
 
 Link meta preview which returns basic preview info like title, description, images, videos based on metadata.
 
 ## Install
 
 <pre>
-	npm install link-meta-preview
+	npm install @connectivepack/link-meta-preview
 </pre>
 
 ## How to use
 
 ```javascript
-var preview = require("link-meta-preview");
+var preview = require("@connectivepack/link-meta-preview");
 preview("http://www.google.com", function(err, data) {
 	if(!err) {
 		console.log(data); //Prints the meta data about the page 
@@ -21,7 +21,7 @@ preview("http://www.google.com", function(err, data) {
 
 You can set a proxy server too
 ```javascript
-var preview = require("link-meta-preview");
+var preview = require("@connectivepack/link-meta-preview");
 preview({ url: "http://www.google.com", proxy: "{server name}", function(err, data) {
 	if(!err) {
 		console.log(data); //Prints the meta data about the page 
