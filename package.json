@@ -1,6 +1,6 @@
 {
   "name": "@connectivepack/link-meta-preview",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Link meta preview which returns basic preview info like title, description, images, videos based on metadata",
   "main": "./index.js",
   "scripts": {
@@ -11,12 +11,11 @@
     "url": "git+https://github.com/firman1015/link-meta-preview.git"
   },
   "dependencies": {
-    "cheerio": "^1.0.0-rc.3",
+    "cheerio": "^1.0.0-rc.9",
     "request": "^2.88.2"
   },
   "keywords": [
-    "link meta preview",
-    "link-meta-preview"
+    "link meta preview"
   ],
   "author": "Firmansyah Effendi",
   "license": "SEE LICENSE IN LICENSE",

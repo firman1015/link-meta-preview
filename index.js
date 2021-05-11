@@ -36,25 +36,27 @@ function getPreview(urlObj, callback) {
 }
 
 function parseResponse(body, url) {
-	var doc, 
-		title, 
-		description,
-		mediaType,
-		images,
-		videos;
+	try{
+		var doc,
+			title,
+			description,
+			mediaType,
+			images,
+			videos;
 
-	doc = cheerio.load(body);
-	title = getTitle(doc);
+		doc = cheerio.load(body);
+		title = getTitle(doc);
 
-	description = getDescription(doc);
+		description = getDescription(doc);
 
-	mediaType = getMediaType(doc);
+		mediaType = getMediaType(doc);
 
-	images = getImages(doc, url);
+		images = getImages(doc, url);
 
-	videos = getVideos(doc);
+		videos = getVideos(doc);
 
-	return createResponseData(url, false, title, description, "text/html", mediaType, images, videos);
+		return createResponseData(url, false, title, description, "text/html", mediaType, images, videos);
+	}catch (e) {}
 }
 
 function getTitle(doc){
@@ -149,8 +151,8 @@ function isAdUrl(url) {
 }
 
 function getVideos(doc) {
-	var videos, 
-		nodes, nodeTypes, nodeSecureUrls, 
+	var videos,
+		nodes, nodeTypes, nodeSecureUrls,
 		nodeType, nodeSecureUrl,
 		video, videoType, videoSecureUrl,
 		width, height,
@@ -164,10 +166,10 @@ function getVideos(doc) {
 		nodeSecureUrls = doc("meta[property='og:video:secure_url']");
 		width = doc("meta[property='og:video:width']").attr("content");
 		height = doc("meta[property='og:video:height']").attr("content");
-		
+
 		for(index = 0; index < length; index++) {
 			video = nodes[index].attribs["content"];
-			
+
 			nodeType = nodeTypes[index];
 			videoType = nodeType ? nodeType.attribs["content"] : null;
 
