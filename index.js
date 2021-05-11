@@ -3,7 +3,6 @@ var request = require("request"),
 	urlObj = require("url"),
 	cheerio = require("cheerio");
 
-
 function getPreview(urlObj, callback) {
 	var url, proxy;
 
@@ -36,27 +35,39 @@ function getPreview(urlObj, callback) {
 }
 
 function parseResponse(body, url) {
+	var doc,
+		title,
+		description,
+		mediaType,
+		images,
+		videos;
+
 	try{
-		var doc,
-			title,
-			description,
-			mediaType,
-			images,
-			videos;
-
 		doc = cheerio.load(body);
-		title = getTitle(doc);
-
-		description = getDescription(doc);
-
-		mediaType = getMediaType(doc);
-
-		images = getImages(doc, url);
-
-		videos = getVideos(doc);
-
-		return createResponseData(url, false, title, description, "text/html", mediaType, images, videos);
 	}catch (e) {}
+
+	try{
+		title = doc ? getTitle(doc) : '';
+	}catch (e) {}
+
+	try{
+		description = doc ?	getDescription(doc) : '';
+	}catch (e) {}
+
+	try{
+		mediaType = doc ? getMediaType(doc) : '';
+	}catch (e) {}
+
+	try{
+		images = doc ? getImages(doc, url) : '';
+	}catch (e) {}
+
+	try{
+		videos = doc ? getVideos(doc) : '';
+	}catch (e) {}
+
+	return createResponseData(url, false, title, description, "text/html", mediaType, images, videos);
+
 }
 
 function getTitle(doc){
