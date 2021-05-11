@@ -51,7 +51,7 @@ function parseResponse(body, url) {
 	}catch (e) {}
 
 	try{
-		description = doc ?	getDescription(doc) : '';
+		description = doc ? getDescription(doc) : '';
 	}catch (e) {}
 
 	try{
